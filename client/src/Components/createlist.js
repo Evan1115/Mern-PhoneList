@@ -14,7 +14,7 @@ export default function Createlist() {
         }
         console.log(newList)
         //connect to backend
-        axios.post('/add', newList)
+        axios.post('/phonelist/add', newList)
             .then(res => console.log(res.data))
 
         window.location = '/';
