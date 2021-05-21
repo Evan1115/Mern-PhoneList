@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Editphonelist(props) {
+export default function Editlist(props) {
 
     const [list, setList] = useState({ username: "", phonenumber: "" })
 
