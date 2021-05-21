@@ -28,7 +28,7 @@ export default function Phonelist() {
     }, [])
 
     const deleteList = (id) => {
-        axios.delete('/phonelist/' + id)
+        axios.delete('/phonelist/delete/' + id)
             .then(res => {
                 res.json("list deleted")
                 setLists(() => {
