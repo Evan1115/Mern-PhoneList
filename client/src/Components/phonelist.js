@@ -29,14 +29,12 @@ export default function Phonelist() {
 
     const deleteList = (id) => {
         axios.delete('/phonelist/delete/' + id)
-            .then(res => {
-                res.json("list deleted")
-                setLists(() => {
-                    return lists.filter(list => list._id !== id)
-                })
-            })
+            .then(res => res.json("list deleted"))
             .catch(() => { alert("error deleting data!") })
 
+        setLists(() => {
+            return lists.filter(list => list._id !== id)
+        })
 
     }
     return (
