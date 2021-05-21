@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/navbar";
 import PhoneList from "./Components/phonelist";
 import CreatePhoneList from "./Components/createlist";
+import EditPhoneList from "./Components/edit-phonelist";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <br />
         <Route path="/" exact component={PhoneList} />
         <Route path="/create" component={CreatePhoneList} />
+        <Router path="/edit/:id" component={EditPhoneList} />
       </div>
     </Router>
 
