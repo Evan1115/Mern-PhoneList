@@ -10,6 +10,7 @@ export default function Editlist(props) {
     useEffect(() => {
 
         //get the specific data using the id behind the url
+        console.log(props.match.params.id)
         axios.get('/phonelist/' + props.match.params.id)
             .then(res => setList({
                 username: res.data.username,
@@ -35,12 +36,14 @@ export default function Editlist(props) {
             phonenumber: list.phonenumber
         }
 
-        axios.post("phonelist/add/", newList)
-            .then(res => res.json("list submitted!"))
+        console.log(newList)
+
+        axios.post("/phonelist/update/" + props.match.params.id, newList)
+            .then(res => window.location = "/")
             .catch(err => console.log(err))
 
         //redirect to home route
-        window.location("/")
+
 
     }
 
@@ -55,7 +58,7 @@ export default function Editlist(props) {
                         className="form-control"
                         placeholder="Enter username"
                         name="username"
-                        value={phonelist.username}
+                        value={list.username}
                         onChange={handleInputChange}
                         required></input>
 
@@ -66,7 +69,7 @@ export default function Editlist(props) {
                         className="form-control"
                         placeholder="Phone Number"
                         name="phonenumber"
-                        value={phonelist.phonenumber}
+                        value={list.phonenumber}
                         onChange={handleInputChange}
                         required></input>
                 </div>

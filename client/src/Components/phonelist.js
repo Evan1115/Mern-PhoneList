@@ -12,7 +12,7 @@ function List(props) {
             <td>{username}</td>
             <td>{phonenumber}</td>
             <td>
-                <Link to={"/edit/" + _id} className="text-decoration-none" >Edit</Link> | <a href="#" className="text-decoration-none" onClick={() => props.delete(_id)}>Delete</a>
+                <Link to={"/edit/" + _id} className="text-decoration-none">Edit</Link> | <a href="#" className="text-decoration-none" onClick={() => props.delete(_id)}>Delete</a>
             </td>
         </tr>
     );
